@@ -489,7 +489,7 @@ namespace QuantConnect.Securities
                 price = _security.Price;
             }
 
-            return (price - AveragePrice) * Quantity * _security.QuoteCurrency.ConversionRate
+            return (_security.Price - AveragePrice) * Quantity * _security.QuoteCurrency.ConversionRate
                 * _security.SymbolProperties.ContractMultiplier - feesInAccountCurrency;
         }
 
